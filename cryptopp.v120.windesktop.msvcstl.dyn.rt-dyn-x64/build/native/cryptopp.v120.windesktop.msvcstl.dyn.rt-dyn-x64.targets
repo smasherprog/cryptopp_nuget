@@ -1,0 +1,3 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Condition="'$(Force-Disable-cryptopp-v120-windesktop-msvcstl-dyn-rt-dyn-x64)' == ''" Project="$(MSBuildThisFileDirectory)\cryptopp.v120.windesktop.msvcstl.dyn.rt-dyn.x64.targets" />
+</Project>

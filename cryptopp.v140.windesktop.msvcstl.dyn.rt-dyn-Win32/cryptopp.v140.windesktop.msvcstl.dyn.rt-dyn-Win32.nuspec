@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>cryptopp.v140.windesktop.msvcstl.dyn.rt-dyn-Win32</id>
+      <version>5.6.2</version>
+      <authors>Scott Lee</authors>
+      <owners>Scott Lee</owners>
+      <licenseUrl>http://cryptopp.com/#license</licenseUrl>
+      <projectUrl>https://github.com/smasherprog/Cryptopp_Nuget</projectUrl>
+      <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>Cryptopp Library is a free C++ class library of cryptographic schemes.</description>
+      <tags>Cryptopp native C++ windesktop dyn rt-dyn msvcstl v140</tags>
+      <releaseNotes></releaseNotes>
+      <copyright>Copyright 2015</copyright>
+    </metadata>
+</package>
