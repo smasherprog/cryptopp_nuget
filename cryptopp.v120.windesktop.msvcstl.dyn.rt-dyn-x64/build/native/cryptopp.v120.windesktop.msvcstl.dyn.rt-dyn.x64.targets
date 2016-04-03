@@ -1,8 +1,0 @@
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemDefinitionGroup Condition="$(PlatformToolset)' == 'v120' And '$(Platform)' == 'x64' ">
-    <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\dyn\rt-dyn\x64\Debug%(AdditionalDependencies)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\dyn\rt-dyn\x64\Release%(AdditionalDependencies)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-</Project>
