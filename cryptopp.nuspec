@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
       <id>cryptopp</id>
-	  <title>Crypto++ 5.6.3</title>
-      <version>5.6.3.4</version>
+	  <title>Crypto++ 5.6.5</title>
+      <version>5.6.5.1</version>
       <authors>Scott Lee</authors>
       <owners>Scott Lee</owners>
       <licenseUrl>http://cryptopp.com/#license</licenseUrl>

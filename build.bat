@@ -56,3 +56,5 @@ call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native
 call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
 call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
 
+cd ..
+exit

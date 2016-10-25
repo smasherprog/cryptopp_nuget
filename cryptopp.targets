@@ -44,5 +44,50 @@
 				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
 			</Link>
 		</ItemGroup>
+		
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x86' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\libcryptopp.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\libcryptopp.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\libcryptopp.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\libcryptopp.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\libcryptopp.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\libcryptopp.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\libcryptopp.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\libcryptopp.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\libcryptopp.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\libcryptopp.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\libcryptopp.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\libcryptopp.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\libcryptopp.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\libcryptopp.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\libcryptopp.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\libcryptopp.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x86' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\libcryptopp.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\libcryptopp.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\libcryptopp.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\libcryptopp.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\libcryptopp.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\libcryptopp.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\libcryptopp.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\libcryptopp.a" />
+		</ItemGroup>
+		<Copy SourceFiles="@(MyPackageSourceFiles)" DestinationFolder="$(OutputPath)" /> 
+		<Error Condition="'$(PlatformToolset)' != 'Clang_3_8' And '$(AndroidAPILevel)' != ''" Text="The cryptopp NuGet package only contains binaries for Clang_3_8. GCC has been depreciated for ndk development, USE CLANG" />
+		<Error Condition="'$(UseOfStl)' != 'c++_static' And '$(UseOfStl)' != 'c++_shared' And '$(AndroidAPILevel)' != ''" Text="cryptopp requires linking against the LLVM libc++. Please set Project Properties -> Configuration Properties -> General -> Use of STL to be 'LLVM libc++'."  />
+
 	</Target>
 </Project>
