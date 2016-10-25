@@ -1,32 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemDefinitionGroup>
-    <ClCompile>
-      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-    </ClCompile>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(PlatformToolset)' == 'v120' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86')  And '$(AndroidAPILevel)' == ''">
-    <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(PlatformToolset)' == 'v120' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
-    <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(PlatformToolset)' == 'v140' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86')  And '$(AndroidAPILevel)' == ''">
-    <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(PlatformToolset)' == 'v140' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
-    <Link>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
-  </ItemDefinitionGroup>
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+		</ClCompile>
+	</ItemDefinitionGroup>
+
+
+	<Target Name="cryptopp_linking" BeforeTargets="Link;Lib" DependsOnTargets="$(ComputeLinkInputsTargets)">
+		<PropertyGroup Condition="'$(MYRuntimeLibrary)' == ''">
+			<MYRuntimeLibrary>%(ClCompile.RuntimeLibrary)</MYRuntimeLibrary>
+		</PropertyGroup>
+		
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v120' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86') And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Debug\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Debug\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Release\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Release\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v120' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
+			<Link>  
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Debug\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Debug\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Release\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Release\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup  Condition="'$(PlatformToolset)' == 'v140' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86')  And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Debug\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Debug\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Release\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Release\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v140' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Debug\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Debug\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release\md\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release\mt\cryptopp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+	</Target>
 </Project>

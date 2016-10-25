@@ -1,6 +1,5 @@
 call del *.nupkg
-copy cryptopp.targets cryptopp\build\native\
-copy cryptopp.nuspec cryptopp\
-copy config.h cryptopp\build\native\include\cryptopp\
-nuget pack cryptopp\cryptopp.nuspec
-for /r . %%g in (*.nupkg) do nuget push %%g -Timeout 2147483
+copy cryptopp.targets cryptopp_nuget\build\native\
+copy cryptopp.nuspec cryptopp_nuget\
+copy config.h cryptopp_nuget\build\native\include\cryptopp\
+nuget pack cryptopp_nuget\cryptopp.nuspec
