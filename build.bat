@@ -39,22 +39,22 @@ call %msbuild% %reponame%.sln /t:cryptopp-win64 /p:OutDir=../%dstnuget%/lib/nati
 call %msbuild% %reponame%.sln /t:cryptopp-arm /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\armeabi\ /p:Platform=ARM /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_shared
 call %msbuild% %reponame%.sln /t:cryptopp-arm /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\armeabi\ /p:Platform=ARM /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_static
 call %msbuild% %reponame%.sln /t:cryptopp-arm /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\armeabi\ /p:Platform=ARM /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
-call %msbuild% %reponame%.sln /t:cryptopp-arm /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\armeabi\ /p:Platform=ARM /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
+call %msbuild% %reponame%.sln /t:cryptopp-arm /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\armeabi\ /p:Platform=ARM /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_static
 
 call %msbuild% %reponame%.sln /t:cryptopp-arm64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\arm64-v8a\ /p:Platform=ARM64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_shared
 call %msbuild% %reponame%.sln /t:cryptopp-arm64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\arm64-v8a\ /p:Platform=ARM64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_static
 call %msbuild% %reponame%.sln /t:cryptopp-arm64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\arm64-v8a\ /p:Platform=ARM64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
-call %msbuild% %reponame%.sln /t:cryptopp-arm64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\arm64-v8a\ /p:Platform=ARM64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
+call %msbuild% %reponame%.sln /t:cryptopp-arm64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\arm64-v8a\ /p:Platform=ARM64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_static
 
 call %msbuild% %reponame%.sln /t:cryptopp-x86 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\x86\ /p:Platform=x86 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_shared
 call %msbuild% %reponame%.sln /t:cryptopp-x86 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\x86\ /p:Platform=x86 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_static
 call %msbuild% %reponame%.sln /t:cryptopp-x86 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86\ /p:Platform=x86 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
-call %msbuild% %reponame%.sln /t:cryptopp-x86 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86\ /p:Platform=x86 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
+call %msbuild% %reponame%.sln /t:cryptopp-x86 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86\ /p:Platform=x86 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_static
 
 call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_shared
 call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Debug\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Debug_static
 call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
-call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_shared
+call %msbuild% %reponame%.sln /t:cryptopp-x64 /p:OutDir=../%dstnuget%\lib\native\android\clang\Release\x86_64\ /p:Platform=x64 /p:PlatformToolset=Clang_3_8 /p:Configuration=Release_static
 
 cd ..
 exit
