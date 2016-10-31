@@ -3,7 +3,7 @@
     <metadata>
       <id>cryptopp</id>
 	  <title>Crypto++ 5.6.5</title>
-      <version>5.6.5.1</version>
+      <version>5.6.5.3</version>
       <authors>Scott Lee</authors>
       <owners>Scott Lee</owners>
       <licenseUrl>http://cryptopp.com/#license</licenseUrl>
@@ -11,9 +11,15 @@
       <iconUrl>https://upload.wikimedia.org/wikipedia/commons/2/22/Crypto%2B%2B-logo.png</iconUrl>
       <requireLicenseAcceptance>false</requireLicenseAcceptance>
       <description>Cryptopp Library is a free C++ class library of cryptographic schemes.</description>
-      <tags>Cryptopp native C++ v120 v140 x86 x64 MT MD Release Debug</tags>
+      <tags>Cryptopp native C++ v120 v140 x86 x64 Android armeabi arm64-v8a static shared Release Debug Clang</tags>
       <releaseNotes></releaseNotes>
       <copyright>Copyright 2015</copyright>
-   
+       <dependencies>
+        <group targetFramework="native0.0">
+          <dependency id="cryptopp.v120" version="[5.6.5.2]" />
+          <dependency id="cryptopp.v140" version="[5.6.5.2]" />
+			<dependency id="cryptopp.android" version="[5.6.5.2]" />
+        </group>
+      </dependencies>
     </metadata>
 </package>
